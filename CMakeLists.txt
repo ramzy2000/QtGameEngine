@@ -23,6 +23,11 @@ qt_add_executable(QtGameEngine
     mainwindow.ui
     gamewindow.h gamewindow.cpp
     entitymanager.h entitymanager.cpp
+    scene/Scene.h
+    scene/TestScene.h scene/TestScene.cpp
+    scenemanager.h scenemanager.cpp
+    logger.h logger.cpp
+    loggerwidget.h loggerwidget.cpp
 )
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})

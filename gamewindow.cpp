@@ -1,4 +1,5 @@
 #include "gamewindow.h"
+#include "logger.h"
 
 GameWindow::GameWindow(QWidget *parent) : QOpenGLWidget(parent)
 {}
@@ -9,6 +10,7 @@ void GameWindow::initializeGL()
     QOpenGLFunctions *f = QOpenGLContext::currentContext()->functions();
     f->glClearColor(0.5f, 1.0f, 1.0f, 1.0f);
     //...
+    Logger::instance()->LogMessage("Game Started");
 }
 
 void GameWindow::resizeGL(int w, int h)
