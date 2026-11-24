@@ -5,6 +5,7 @@
 #include <QOpenGLWidget>
 #include <QWidget>
 #include <QOpenGLFunctions>
+#include <entt/entt.hpp>
 
 class GameWindow : public QOpenGLWidget
 {
