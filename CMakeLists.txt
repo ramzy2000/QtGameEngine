@@ -28,6 +28,7 @@ qt_add_executable(QtGameEngine
     scenemanager.h scenemanager.cpp
     logger.h logger.cpp
     loggerwidget.h loggerwidget.cpp
+    component/Position.h
 )
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
