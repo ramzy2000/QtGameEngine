@@ -1,5 +1,6 @@
 #include "gamewindow.h"
 #include "logger.h"
+#include "entitymanager.h"
 
 GameWindow::GameWindow(QWidget *parent) : QOpenGLWidget(parent)
 {}
@@ -27,7 +28,16 @@ void GameWindow::resizeGL(int w, int h)
 void GameWindow::paintGL()
 {
     // Draw the scene:
-    QOpenGLFunctions *f = QOpenGLContext::currentContext()->functions();
-    f->glClear(GL_COLOR_BUFFER_BIT);
+    //QOpenGLFunctions *f = QOpenGLContext::currentContext()->functions();
+    //f->glClear(GL_COLOR_BUFFER_BIT);
     //...
+
+    // Calculate delta time in seconds
+    qint64 now = timer.elapsed();
+    float dt = (now - lastFrameTime) / 1000.0f; // ms → seconds
+    lastFrameTime = now;
+
+    entt::registry& registry = EntityManager::instance()->registry();
+
+    engine.Update(registry, dt);
 }
