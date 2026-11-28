@@ -37,6 +37,7 @@ qt_add_executable(QtGameEngine
     component/Position.h
     engine.h engine.cpp
     system/System.h system/System.cpp
+    assetmanager.h assetmanager.cpp
 )
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
