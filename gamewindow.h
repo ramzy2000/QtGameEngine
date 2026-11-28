@@ -25,6 +25,8 @@ public:
     void resizeGL(int w, int h) override;
 
     void paintGL() override;
+private:
+    float accumulator = 0.0f;
 };
 
 #endif // GAMEWINDOW_H

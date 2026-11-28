@@ -11,7 +11,13 @@ FetchContent_Declare(
     GIT_TAG        v4.0.0 # release-1.10.0
 )
 
-FetchContent_MakeAvailable(entt)
+FetchContent_Declare(
+    glm
+    GIT_REPOSITORY https://github.com/g-truc/glm.git
+    GIT_TAG 1.0.3
+)
+
+FetchContent_MakeAvailable(entt glm)
 
 qt_standard_project_setup()
 
@@ -30,6 +36,7 @@ qt_add_executable(QtGameEngine
     loggerwidget.h loggerwidget.cpp
     component/Position.h
     engine.h engine.cpp
+    system/System.h system/System.cpp
 )
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
@@ -40,6 +47,7 @@ target_link_libraries(QtGameEngine
         Qt::Widgets
         Qt::OpenGLWidgets
         EnTT::EnTT
+        glm::glm
 )
 
 install(TARGETS QtGameEngine
